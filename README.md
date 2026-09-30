@@ -10,6 +10,7 @@ They share one site shell (nav, typography, PWA shell) but are visually and func
 **Everything in this app runs on-device.** There is no backend, no database, no accounts, and no network calls other than loading the app itself. All persistence is `localStorage` / `IndexedDB`, and every "export" is a local file download you trigger yourself.
 
 Public source: [github.com/kamikaze8o1/neuraguard](https://github.com/kamikaze8o1/neuraguard). MIT license.
+Live app: [neuraguard-lime.vercel.app](https://neuraguard-lime.vercel.app).
 
 ## The two sides
 
