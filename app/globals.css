@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0a0d0c;
+  color: #e9f5ee;
+  font-family: var(--font-sans);
+}
+
+* {
+  scrollbar-color: #3a4a43 transparent;
+}
+
+::selection {
+  background: rgba(57, 255, 143, 0.3);
+}
+
+.side-probe ::selection {
+  background: rgba(255, 176, 32, 0.3);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-guard-gradient {
+    background: radial-gradient(120% 140% at 15% -10%, rgba(57, 255, 143, 0.16), transparent 55%),
+      radial-gradient(120% 140% at 100% 0%, rgba(31, 191, 107, 0.1), transparent 60%),
+      #0d1210;
+  }
+
+  .bg-probe-gradient {
+    background: radial-gradient(120% 140% at 85% -10%, rgba(255, 176, 32, 0.14), transparent 55%),
+      radial-gradient(120% 140% at 0% 0%, rgba(92, 124, 153, 0.14), transparent 60%),
+      #0b0f14;
+  }
+
+  .card-guard {
+    @apply bg-guard-surface border border-guard-border;
+  }
+
+  .card-probe {
+    @apply bg-probe-surface border border-probe-border;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease both;
+}
